@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ExamenJorge</title>
+        <meta name="description" content="">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color:#15E1CF;">
+
+        <div align="center"><h1 class="display-3">REGISTROS</h1></div>
+
+        <table width="100%" border="0" cellpadding="8" cellspacing="0" class="table">
+            <tr>
+                <td>
+                    <div align="center">
+                        <table width="80%" border="0" class="table table-striped table-dark">
+                            <tr>
+                                <th>COLUMNA 1</th>
+                                <th>COLUMNA 2</th>
+                                <th>COLUMNA 3</th>
+                                <th>COLUMNA 4</th>
+                            </tr>
+
+                            {% for valor in valores %}
+                            <tr>
+
+                                <td>{{valor.val1}}</td>
+                                <td>{{valor.val2}}</td>
+                                <td>{{valor.val3}}</td>
+                                <td>{{valor.val4}}</td>
+                                
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div align="center">
+                        <table class="table table-striped table-dark">
+                            <tr>
+                                <th>SUMA</th>
+                            </tr>
+
+                            {% for val in sumas %}
+                            <tr>
+                                <td>{{val}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
