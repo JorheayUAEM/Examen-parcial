@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,54 +7,32 @@
         <meta name="description" content="">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
 
     <body style="background-color:#15E1CF;">
+            <br>
+			<nav class="hijo">
+				<ul class="nav">
+					<li><a href="{% url 'inicio' %}">INICIO</a></li>
+					<li><a href="{% url 'registros' %}">REGISTROS</a></li>
+					<li><a href="">ALGORITMOS</a>
+						<ul>
+							<li><a href="{% url 'algoritmo_knn' %}">KNN</a></li>
+							<li><a href="{% url 'algoritmo_cbi' %}">CBI</a></li>
+							<li><a href="{% url 'algoritmo_regLog' %}">REGRESION LOGISTICA</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
 
-        <div align="center"><h1 class="display-3">REGISTROS</h1></div>
+        <br><br>
+        <div >
 
-        <table width="100%" border="0" cellpadding="8" cellspacing="0" class="table table-striped table-dark">
-            <tr>
-                <td>
-                    <div align="center">
-                        <table width="80%" border="0" class="table table-striped table-dark">
-                            <tr>
-                                <th>COLUMNA 1</th>
-                                <th>COLUMNA 2</th>
-                                <th>COLUMNA 3</th>
-                                <th>COLUMNA 4</th>
-                            </tr>
+            {% block content %}
+            {% endblock %}
 
-                            {% for valor in valores %}
-                            <tr>
-
-                                <td>{{valor.val1}}</td>
-                                <td>{{valor.val2}}</td>
-                                <td>{{valor.val3}}</td>
-                                <td>{{valor.val4}}</td>
-                                
-                            </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-                </td>
-                <td>
-                    <div align="center">
-                        <table class="table table-striped table-dark">
-                            <tr>
-                                <th>SUMA</th>
-                            </tr>
-
-                            {% for val in sumas %}
-                            <tr>
-                                <td>{{val}}</td>
-                            </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        </div>
 
     </body>
 </html>

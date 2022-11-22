@@ -1,0 +1,21 @@
+{% extends 'blog/index.html' %}
+
+{% block content %}
+    <h1 class="display-1">REGRESION LOGISTICA</h1>
+    <p><em>Ingrese DOS valores:</em></p>
+    <form class="row gx-3 gy-2 align-items-center"  action="/RESULTRL/" method="get">
+        {% csrf_token %}
+        <div class="col-sm-2">
+          <label class="visually-hidden" for="specificSizeInputName">Name</label>
+          <input type="text" class="form-control" name="x1" id="specificSizeInputX" placeholder="x1">
+        </div>
+        <div class="col-sm-2">
+            <label class="visually-hidden" for="specificSizeInputName">Name</label>
+            <input type="text" class="form-control" name="x2" id="specificSizeInputY" placeholder="x2">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary">CLASIFICAR</button>
+        </div>
+    </form>
+
+{% endblock %}  
